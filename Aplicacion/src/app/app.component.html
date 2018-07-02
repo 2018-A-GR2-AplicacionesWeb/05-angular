@@ -1,7 +1,9 @@
-
 <div class="row">
   <div class="col-sm-12">
-    COMPONENTE TITULO
+    <app-titulo
+      [titulo]="titulo"
+    >
+    </app-titulo>
   </div>
 </div>
 
@@ -9,8 +11,13 @@
 
   <div class="col-sm-1"></div>
 
-  <div class="col-sm-2">
-    COMPONENTE PERFIL
+  <div class="col-sm-2" *ngFor="let perfil of perfiles">
+    <app-perfil
+      [nombre]="perfil.nombrePerfil"
+      [urlImagen]="'/assets/imagenes/'+perfil.nombreImagen"
+    >
+
+    </app-perfil>
   </div>
 
   <div class="col-sm-1"></div>
@@ -19,15 +26,13 @@
 <div class="row">
   <div class="col-sm-4"></div>
   <div class="col-sm-4">
-    COMPONENTE BOTON
+    <app-boton
+      [nombreBoton]="nombreBoton"
+      (dioClick)="irAAdministrarPerfiles()"
+    ></app-boton>
   </div>
   <div class="col-sm-4"></div>
 </div>
-
-
-
-
-
 
 
 <!--

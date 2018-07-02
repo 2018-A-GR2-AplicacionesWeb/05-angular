@@ -21,8 +21,45 @@ export class AppComponent {
 
   anchoImagen = 400;
 
+  titulo = '¿Quién está viendo ahora?';
+
+  nombreBoton = 'aDminisTrar perfiles';
+
+  perfiles = [
+    {
+      id: 1,
+      nombrePerfil: 'tatis1909',
+      nombreImagen: 'tatis1909.png'
+    },
+    {
+      id: 2,
+      nombrePerfil: 'pedro',
+      nombreImagen: 'pedro.png'
+    },
+    {
+      id: 3,
+      nombrePerfil: 'Jeff',
+      nombreImagen: 'Jeff.png'
+    },
+    {
+      id: 4,
+      nombrePerfil: 'Edd',
+      nombreImagen: 'Edd.png'
+    },
+    {
+      id: 5,
+      nombrePerfil: 'Nancy',
+      nombreImagen: 'Nancy.png'
+    }
+  ];
+
+
   cambiarTamanoImagen(tamanoCambio: number) {
     this.anchoImagen += tamanoCambio;
+  }
+
+  irAAdministrarPerfiles() {
+    console.log('Ir a administrar');
   }
 
 }
