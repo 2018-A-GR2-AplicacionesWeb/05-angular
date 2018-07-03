@@ -13,6 +13,7 @@ export class BotonComponent implements OnInit {
   // Evento
   @Output() dioClick = new EventEmitter();
 
+  fecha = new Date();
 
   constructor() {
   }

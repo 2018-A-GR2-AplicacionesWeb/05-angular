@@ -54,12 +54,19 @@ export class AppComponent {
   ];
 
 
-  cambiarTamanoImagen(tamanoCambio: number) {
+  cambiarTamanoImagen(tamanoCambio: number,
+                      evento) {
+    console.log(tamanoCambio);
+    console.log(evento);
     this.anchoImagen += tamanoCambio;
   }
 
   irAAdministrarPerfiles() {
     console.log('Ir a administrar');
+  }
+
+  irACuenta(nombreCuenta: string) {
+    console.log('Ir a cuenta', nombreCuenta);
   }
 
 }

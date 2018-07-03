@@ -11,10 +11,12 @@
 
   <div class="col-sm-1"></div>
 
-  <div class="col-sm-2" *ngFor="let perfil of perfiles">
+  <div class="col-sm-2"
+       *ngFor="let perfil of perfiles">
     <app-perfil
       [nombre]="perfil.nombrePerfil"
       [urlImagen]="'/assets/imagenes/'+perfil.nombreImagen"
+      (seleccionoCuenta)="irACuenta($event)"
     >
 
     </app-perfil>
@@ -34,9 +36,7 @@
   <div class="col-sm-4"></div>
 </div>
 
-
 <!--
-
 <div class="container">
 
   <h1>Data Bindings</h1>
@@ -51,11 +51,14 @@
 
   <h2>Event Bindings (event)</h2>
 
-  <button (click)="cambiarTamanoImagen(10)">
+  <button
+    (click)="cambiarTamanoImagen(10, $event)"
+    (mouseenter)="cambiarTamanoImagen(-10, $event)"
+  >
     Aumentar tamano
   </button>
 
-  <h1 (mouseenter)="cambiarTamanoImagen(-10)">
+  <h1>
     REDUCIR TAMANO
   </h1>
 
@@ -88,6 +91,4 @@
   <p>2 + 2 es igual a {{2+2}}</p>
 
 </div>
-
 -->
-
