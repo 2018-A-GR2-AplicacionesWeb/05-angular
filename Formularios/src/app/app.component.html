@@ -6,6 +6,7 @@
     (ngSubmit)="crearUsuario(formularioUsuario)"
     #formularioUsuario="ngForm"
   >
+    <h4>Estados del formulario</h4>
     <pre>
       valid: {{formularioUsuario.valid}}
       invalid: {{formularioUsuario.invalid}}
@@ -15,16 +16,48 @@
       untouched: {{formularioUsuario.untouched}}
     </pre>
 
+    <h4>Errores del formulario</h4>
+
     <pre>
       Errores:{{formularioUsuario.errors}}
     </pre>
 
+
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-             placeholder="Enter email">
+
+
+      <input type="email"
+             class="form-control"
+             id="exampleInputEmail1"
+             aria-describedby="emailHelp"
+             placeholder="Enter email"
+             [(ngModel)]="email"
+             name="email"
+             required
+             minlength="3"
+             #emailCampo="ngModel"
+      >
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+      <h5>Estados del campo</h5>
+      <pre>
+      valid: {{emailCampo.valid}}
+      invalid: {{emailCampo.invalid}}
+      dirty: {{emailCampo.dirty}}
+      pristine: {{emailCampo.pristine}}
+      touched: {{emailCampo.touched}}
+      untouched: {{emailCampo.untouched}}
+    </pre>
+      <h4>Errores del Campo</h4>
+      <pre>
+      Errores:{{emailCampo.errors |json }}
+    </pre>
+
+
     </div>
+
+
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">

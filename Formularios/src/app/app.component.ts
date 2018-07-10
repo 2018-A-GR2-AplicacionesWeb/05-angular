@@ -8,6 +8,9 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'app';
 
+  email;
+
+
   crearUsuario(formulario) {
     console.log(formulario);
   }
